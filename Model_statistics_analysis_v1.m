@@ -134,7 +134,7 @@ for q = 1:length(SIRdata)
 
 R0_calc = zeros(1,round(t_i/dt));   %array to store values of R0 calculated from Eq.1. 
 for i=round(tau_m/dt)+1:round(t_i/dt)    %Loop to find multiple values of R0_calc
-    N_S_init = N0-sum(i_rate(1:i))*dt;   %Solve for N_S(t) = integral(i(t),{0,t}) from Eq.1
+    N_S_init = N0-sum(i_rate(1:i));   %Solve for N_S(t) = integral(i(t),{0,t}) from Eq.1
     R0_calc(i) = i_rate(i)/(trapz(i_rate(i-round(tau_m/dt):i).*flip(gi)*dt))/N_S_init*N0; %Solve for R0_calc from Eq. 1
 end
 
