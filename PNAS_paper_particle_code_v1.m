@@ -266,13 +266,6 @@ while t < duration && sum(Infected) > 0 %Continue to run the loop until there ar
     N_I(dt_count) = sum(Infected);
     N_I_total(dt_count) = sum(Infected_prev);
     N_R(dt_count) = sum(Recovered);
-    %totalPastHighScore(dt_count) = sum(PastHighScore);
-    
-%     if t>tau_r()    %Fern edit tau_r() distribution
-%         Reff(dt_count-InfectiousSteps) = (totalPastHighScore(dt_count)-totalPastHighScore(dt_count-InfectiousSteps))/N_I(dt_count-InfectiousSteps+1);
-%     end
-    
-%     R0(dt_count) = (sum(HighScore)/sum(Infected_prev))*N0/(N0-sum(Infected_prev));
     
  %*************Uncomment if plotting positions. Otherwise, 
     s.XData = x; %handle for datapoints
