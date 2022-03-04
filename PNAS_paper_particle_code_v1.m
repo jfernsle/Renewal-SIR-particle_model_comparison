@@ -93,8 +93,8 @@ mu_si = log(mean_si^2/sqrt(std_si^2+mean_si^2));
 sigma_si = sqrt(log(std_si^2/mean_si^2 + 1));
 pd = makedist('Lognormal','mu',mu_si,'sigma',sigma_si);
 Nc = 2*ri*v0*tau_ave*N0/L^2;    %Average number of close encounters per infector
-gi_t = pdf(pd,gen_time);
-pi = R0_expect/Nc*pdf(pd,0:dt:tau_m);
+gi_t = pdf(pd,tau_m);
+pi = R0_expect/Nc*pdf(pd,0:dt:tau_m)*tau_m;
 
 %% Main simulation section
 %Here we set up the simulation to run until no infected particles remain.
